@@ -1,8 +1,0 @@
-{
-	"files.associations": {
-		"*.embeddedhtml": "html",
-		"*.sass": "sass",
-		"*.ttml": "xml",
-		"*.ttss": "css"
-	}
-}
