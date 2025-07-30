@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +9,57 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+#root * {
+  @apply border-gray-500;
+}
+
+aside div {
+  background-image: url(https://i.scdn.co/image/ab67616d0000b273208f4704013fb9a9082deaf5);
+  aspect-ratio: 1;
+  background-size: cover;
+  position: relative;
+  cursor: pointer;
+  transform: scale(0.9);
+  transition: 0.3s ease;
+  z-index: 100;
+  background-color: #fff8;
+  @apply w-16 rounded-md;
+}
+
+aside div:hover {
+  transform: scale(1.1);
+}
+
+aside div:hover::after {
+  content: attr(data-label);
+  color: #000;
+  background-color: lightgray;
+  font-size: 0.6em;
+  padding: 0 15px;
+  display: inline-block;
+  position: absolute;
+  left: 120%;
+  top: 50%;
+  border-radius: 10px;
+  box-shadow: #000 0 0 5px;
+  transform: translateY(-50%);
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
 }
 
 code {
