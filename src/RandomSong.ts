@@ -16,6 +16,7 @@ export async function getRandomDeezerChartSong(): Promise<DeezerTrack | null> {
   try {
     const res = await fetch('/api/chart');
     const json = await res.json();
+    console.log(json)
     const tracks: DeezerTrack[] = json.tracks.data;
 
     if (!tracks.length) return null;
