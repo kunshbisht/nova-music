@@ -28,17 +28,5 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../build', 'index.html'));
 });
 
-console.log(app._router.stack.map(r => r.route?.path).filter(Boolean));
-
-app._router.stack.forEach((layer) => {
-  if (layer.route) {
-    console.log('Route:', layer.route.path);
-  }
-});
-
 const PORT = process.env.PORT || 3000;
-try {
-  app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
-} catch (e) {
-  console.error('Error starting server:', e);
-}
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));

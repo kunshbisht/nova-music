@@ -15,8 +15,6 @@ export function onDragStart(event: DragEvent<HTMLElement>) {
 		artist: artistSpan?.innerHTML || ''
 	};
 
-	console.log(songObj)
-
 	event.dataTransfer.setData('text/plain', JSON.stringify(songObj));
 }
 
